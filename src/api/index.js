@@ -14,6 +14,7 @@ export const postScore = async (score) =>
     body: JSON.stringify({ score }),
   }).then(function (res) {
     //return res.json();
+
     // Mocking success for now
     return mockSuccess;
   });
