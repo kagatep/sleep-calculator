@@ -18,10 +18,12 @@ function App() {
   const [isLoading, setIsLoading] = React.useState(false);
 
   const handleButtonClick = async () => {
+    // Set button to "Loading" state
     setIsLoading(true);
     const calculated = calculateSleep(bedValue, sleepValue);
     const { statusCode } = await postScore(calculated);
 
+    // Wait for api response before updating UI
     if (statusCode === 200) {
       setIsLoading(false);
       setOutputValue(calculated);
